@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/block/cms-block-gallery-buybox.html.twig' %}
+
+{% block block_gallery_buybox_column_right %}
+    {% if page.product.translated.customFields.academy_product_black_friday is not same as(true) %}
+        {{ parent() }}
+    {% else %}
+        {% set element = block.slots.getSlot('right') %}
+
+        <div class="academy-product-detail-buy col-lg-5 product-detail-buy" data-cms-element-id="{{ element.id }}">
+            {% block block_gallery_buybox_column_right_inner %}
+                {% sw_include '@Storefront/storefront/element/cms-element-' ~ element.type ~ '.html.twig' ignore missing %}
+            {% endblock %}
+        </div>
+    {% endif %}
+{% endblock %}

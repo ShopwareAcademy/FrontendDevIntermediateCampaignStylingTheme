@@ -1,0 +1,84 @@
+{
+  "name": "FrontendDevIntermediateProductCardStylingTheme",
+  "author": "Shopware AG",
+  "views": [
+     "@Storefront",
+     "@Plugins",
+     "@FrontendDevIntermediateProductCardStylingTheme"
+  ],
+  "style": [
+    "app/storefront/src/scss/overrides.scss",
+    "@Storefront",
+    "app/storefront/src/scss/base.scss"
+  ],
+  "script": [
+    "@Storefront"
+  ],
+  "asset": [
+    "@Storefront"
+  ],
+  "config": {
+    "tabs": {
+      "colours": {
+        "label": {
+          "en-GB": "Black Friday",
+          "de-DE": "Black Friday"
+        }
+      }
+    },
+    "blocks": {
+      "blackFriday": {
+        "label": {
+          "en-GB": "Black Friday",
+          "de-DE": "Black Friday"
+        }
+      }
+    },
+    "sections": {
+      "blackFridayColors": {
+        "label": {
+          "en-GB": "Black Friday Colors",
+          "de-DE": "Black Friday Farben"
+        }
+      }
+    },
+    "fields": {
+      "academy-black-friday-background-color": {
+        "label": {
+          "en-GB": "Background Color",
+          "de-DE": "Hintergrundfarbe"
+        },
+        "type": "color",
+        "value": "#000000",
+        "editable": true,
+        "tab": "colours",
+        "block": "blackFriday",
+        "section": "blackFridayColors"
+      },
+      "academy-black-friday-text-color": {
+        "label": {
+          "en-GB": "Text Color",
+          "de-DE": "Textfarbe"
+        },
+        "type": "color",
+        "value": "#000000",
+        "editable": true,
+        "tab": "colours",
+        "block": "blackFriday",
+        "section": "blackFridayColors"
+      },
+      "academy-black-friday-text-color-inverse": {
+        "label": {
+          "en-GB": "Inverse Text Color",
+          "de-DE": "Inverse Textfarbe"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "colours",
+        "block": "blackFriday",
+        "section": "blackFridayColors"
+      }
+    }
+  }
+}

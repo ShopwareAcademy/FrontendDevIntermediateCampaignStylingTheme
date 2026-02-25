@@ -1,0 +1,56 @@
+/* Card */
+.academy-product-box {
+  .card {
+    &.product-box {
+      border: 3px solid $academy-black-friday-background-color;
+
+      .badge-black-friday-sale {
+        background-color: $academy-black-friday-background-color;
+        color: $academy-black-friday-text-color-inverse;
+      }
+
+      .product-price {
+        color: $academy-black-friday-text-color;
+        margin-top: 5px;
+        padding-left: 10px;
+      }
+
+      .rounded-circle {
+        background-color: $academy-black-friday-background-color;
+        color: $academy-black-friday-text-color-inverse;
+        font-size: 14px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn-buy {
+        background-color: $academy-black-friday-background-color;
+        color: $academy-black-friday-text-color-inverse;
+      }
+    }
+  }
+}
+
+/* PDP */
+.academy-product-detail-buy {
+  .product-detail-price {
+    &.with-list-price {
+      color: $academy-black-friday-text-color;
+    }
+  }
+
+  .list-price-percentage {
+    background-color: $academy-black-friday-background-color;
+    color: $academy-black-friday-text-color-inverse;
+    border-radius: 7px;
+    padding: 1px 5px;
+  }
+
+  .btn-buy {
+    background-color: $academy-black-friday-background-color;
+    color: $academy-black-friday-text-color-inverse;
+  }
+}

@@ -1,0 +1,30 @@
+{% sw_extends '@Storefront/storefront/component/product/card/badges.html.twig' %}
+
+{% block component_product_badges_discount %}
+    {% if product.translated.customFields.academy_product_black_friday is not same as(true) %}
+        {{ parent() }}
+    {% else %}
+        {# From SW Core #}
+        {% set price = product.calculatedPrice %}
+        {% if product.calculatedPrices.count > 0 %}
+            {% set price = product.calculatedPrices.last %}
+        {% endif %}
+
+        {% set listPrice = price.listPrice.percentage > 0 %}
+        {% set hasRange = product.calculatedPrices.count > 1 %}
+
+        {% set displayParent = product.variantListingConfig.displayParent and product.parentId === null %}
+        {% if displayParent %}
+            {% set displayFromVariants = displayParent and price.unitPrice !== product.calculatedCheapestPrice.unitPrice %}
+        {% endif %}
+
+        {% if listPrice and not hasRange and not displayFromVariants %}
+            <span class="badge badge-black-friday-sale badge-discount">
+                <span class="visually-hidden">{{ 'listing.boxLabelDiscount'|trans|sw_sanitize }}</span>
+
+                {# This is adapted #}
+                <span aria-hidden="true">{{ 'academyProductCardStylingTheme.blackFridayBadge'|trans|sw_sanitize }}</span>
+            </span>
+        {% endif %}
+    {% endif %}
+{% endblock %}

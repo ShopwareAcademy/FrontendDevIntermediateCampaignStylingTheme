@@ -1,0 +1,11 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
+
+{% block component_product_box %}
+    {% if product.translated.customFields.academy_product_black_friday is not same as(true) %}
+        {{ parent() }}
+    {% else %}
+        <div class="academy-product-box">
+            {{ parent() }}
+        </div>
+    {% endif %}
+{% endblock %}

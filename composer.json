@@ -1,0 +1,28 @@
+{
+  "name": "academy/frontend-dev-intermediate-product-card-styling-theme",
+  "description": "Academy Theme: Practical Lab: Product Card Styling Theme",
+  "type": "shopware-platform-plugin",
+  "version": "1.0.0",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Shopware Academy",
+      "email": "academy@shopware.com"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "FrontendDevIntermediateProductCardStylingTheme\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "FrontendDevIntermediateCampaignStylingTheme\\FrontendDevIntermediateCampaignStylingTheme",
+    "label": {
+      "de-DE": "Frontend Dev Intermediate - Product Card Styling Theme",
+      "en-GB": "Frontend Dev Intermediate - Product Card Styling Theme"
+    }
+  }
+}
