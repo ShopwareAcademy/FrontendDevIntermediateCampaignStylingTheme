@@ -4,20 +4,19 @@
     {% if page.product.translated.customFields.academy_product_black_friday is not same as(true) %}
         {{ parent() }}
     {% else %}
-            {# From SW Core, but apadpted at some place #}
-            {% set listPrice = price.listPrice %}
-            {% set isListPrice = price.listPrice.percentage > 0 %}
-            {% set isRegulationPrice = price.regulationPrice != null %}
+        {# From SW Core, but apadpted at some place #}
+        {% set listPrice = price.listPrice %}
+        {% set isListPrice = price.listPrice.percentage > 0 %}
+        {% set isRegulationPrice = price.regulationPrice != null %}
 
-            <div class="container">
-                <div class="row">
+        <div class="container">
+            <div class="row">
                 <div class="col-12 p-0 product-detail-price{% if isListPrice %} with-list-price{% endif %}{% if isRegulationPrice %} with-regulation-price{% endif %}">
                     {{ price.unitPrice|currency }}
                 </div>
 
                 {% if isListPrice %}
                     {% block buy_widget_was_price %}
-
                         {% block buy_widget_was_price_badge %}
                             {% if product.translated.customFields.academy_product_black_friday is not same as(true) %}
                                 {{ parent() }}
@@ -28,17 +27,22 @@
                         {% set beforeListPriceSnippetExists = 'listing.beforeListPrice'|trans|length > 0 %}
 
                         {% block buy_widget_was_price_wrapper %}
-                            <div class="col-12 p-0 product-detail-list-price-wrapper">
-                                <span class="list-price-percentage fw-bold">-{{ listPrice.percentage|round(0, 'floor') }}%</span>
+                            {% if product.translated.customFields.academy_product_black_friday is not same as(true) %}
+                                {{ parent() }}
+                            {% else %}
+                                {# Adapted #}
+                                <div class="col-12 p-0 product-detail-list-price-wrapper">
+                                    <span class="list-price-percentage fw-bold">-{{ listPrice.percentage|round(0, 'floor') }}%</span>
 
-                                {% if beforeListPriceSnippetExists %}{{ 'listing.beforeListPrice'|trans|trim }}{% endif %}
+                                    {% if beforeListPriceSnippetExists %}{{ 'listing.beforeListPrice'|trans|trim }}{% endif %}
 
-                                <span{% if not (afterListPriceSnippetExists or beforeListPriceSnippetExists) %} class="list-price-price"{% endif %}>{{ listPrice.price|currency }}</span>
+                                    <span{% if not (afterListPriceSnippetExists or beforeListPriceSnippetExists) %} class="list-price-price"{% endif %}>{{ listPrice.price|currency }}</span>
 
-                                {% if afterListPriceSnippetExists %}
-                                    {{ 'listing.afterListPrice'|trans|trim }}
-                                {% endif %}
-                            </div>
+                                    {% if afterListPriceSnippetExists %}
+                                        {{ 'listing.afterListPrice'|trans|trim }}
+                                    {% endif %}
+                                </div>
+                            {% endif %}
                         {% endblock %}
                     {% endblock %}
                 {% endif %}
@@ -49,7 +53,7 @@
                         </span>
                     </span>
                 {% endif %}
-                </div>
             </div>
+        </div>
     {% endif %}
 {% endblock %}
