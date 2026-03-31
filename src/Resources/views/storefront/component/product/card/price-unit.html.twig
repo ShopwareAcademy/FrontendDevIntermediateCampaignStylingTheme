@@ -4,33 +4,31 @@
     {% if product.translated.customFields.academy_product_black_friday is not same as(true) %}
         {{ parent() }}
     {% else %}
-        <div class="container">
-            <div class="row">
-                {# Discount Circle #}
-                <div class="col-3 rounded-circle list-price-percentage">
-                    {{ price.listPrice.percentage|round(0, 'floor') }}%
-                </div>
-                <div class="col-9 product-price{% if isListPrice and not displayFrom and not displayFromVariants %} with-list-price{% endif %}">
-                    {{ price.unitPrice|currency }}
+        <div class="academy-black-friday-price-wrapper d-inline-flex align-self-stretch flex-wrap">
+            <span class="badge badge-discount rounded-pill ">
+                -{{ price.listPrice.percentage|round(0, 'floor') }}%
+            </span>
 
-                    {# From SW-Core #}
-                    {% if isListPrice and not displayFrom and not displayFromVariants %}
-                        {% set afterListPriceSnippetExists = 'listing.afterListPrice'|trans|length > 0 %}
-                        {% set beforeListPriceSnippetExists = 'listing.beforeListPrice'|trans|length > 0 %}
-                        {% set hideStrikeTrough = beforeListPriceSnippetExists or afterListPriceSnippetExists %}
+            <div class="product-price{% if isListPrice and not displayFrom and not displayFromVariants %} with-list-price{% endif %}">
+                {{ price.unitPrice|currency }}
 
-                        <span class="list-price{% if hideStrikeTrough %} list-price-no-line-through{% endif %}">
+                {# From SW-Core #}
+                {% if isListPrice and not displayFrom and not displayFromVariants %}
+                    {% set afterListPriceSnippetExists = 'listing.afterListPrice'|trans|length > 0 %}
+                    {% set beforeListPriceSnippetExists = 'listing.beforeListPrice'|trans|length > 0 %}
+                    {% set hideStrikeTrough = beforeListPriceSnippetExists or afterListPriceSnippetExists %}
 
-                            {% if beforeListPriceSnippetExists %}{{ 'listing.beforeListPrice'|trans|trim|sw_sanitize }}{% endif %}
+                    <span class="list-price{% if hideStrikeTrough %} list-price-no-line-through{% endif %}">
 
-                            <span class="visually-hidden list-price-label">{{ 'listing.regularPriceLabel'|trans|sw_sanitize }}</span>
+                        {% if beforeListPriceSnippetExists %}{{ 'listing.beforeListPrice'|trans|trim|sw_sanitize }}{% endif %}
 
-                            <span class="list-price-price">{{ price.listPrice.price|currency }}</span>
+                        <span class="visually-hidden list-price-label">{{ 'listing.regularPriceLabel'|trans|sw_sanitize }}</span>
 
-                            {% if afterListPriceSnippetExists %}{{ 'listing.afterListPrice'|trans|trim|sw_sanitize }}{% endif %}
-                        </span>
-                    {% endif %}
-                </div>
+                        <span class="list-price-price">{{ price.listPrice.price|currency }}</span>
+
+                        {% if afterListPriceSnippetExists %}{{ 'listing.afterListPrice'|trans|trim|sw_sanitize }}{% endif %}
+                    </span>
+                {% endif %}
             </div>
         </div>
     {% endif %}
