@@ -19,11 +19,11 @@
         {% endif %}
 
         {% if listPrice and not hasRange and not displayFromVariants %}
-            <span class="badge badge-black-friday-sale badge-discount">
+            <span class="badge badge-discount">
                 <span class="visually-hidden">{{ 'listing.boxLabelDiscount'|trans|sw_sanitize }}</span>
 
                 {# This is adapted #}
-                <span aria-hidden="true">{{ 'academyProductCardStylingTheme.blackFridayBadge'|trans|sw_sanitize }}</span>
+                <span>{{ 'academyProductCardStylingTheme.blackFridayBadge'|trans|sw_sanitize }}</span>
             </span>
         {% endif %}
     {% endif %}

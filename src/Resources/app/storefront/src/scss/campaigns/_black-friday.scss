@@ -4,31 +4,32 @@
     &.product-box {
       border: 3px solid $academy-black-friday-background-color;
 
-      .badge-black-friday-sale {
-        background-color: $academy-black-friday-background-color;
-        color: $academy-black-friday-text-color-inverse;
-      }
-
       .product-price {
         color: $academy-black-friday-text-color;
         margin-top: 5px;
         padding-left: 10px;
       }
 
-      .rounded-circle {
-        background-color: $academy-black-friday-background-color;
-        color: $academy-black-friday-text-color-inverse;
-        font-size: 14px;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
       .btn-buy {
         background-color: $academy-black-friday-background-color;
         color: $academy-black-friday-text-color-inverse;
+      }
+
+      .badge-discount {
+        background-color: $academy-black-friday-background-color;
+        color: $academy-black-friday-text-color-inverse;
+      }
+
+      .academy-black-friday-price-wrapper {
+        .badge-discount {
+          background-color: $academy-black-friday-background-color;
+          color: $academy-black-friday-text-color-inverse;
+        }
+
+        .product-price {
+          padding-left: 0;
+          margin-top: 0;
+        }
       }
     }
   }
