@@ -25,6 +25,7 @@ class CustomFieldsLifecycle
             [
                 'id' => Uuid::fromStringToHex(self::CUSTOM_FIELD_SET_NAME),
                 'name' => 'Academy_Product',
+                'global' => true,
                 'position' => 0,
                 'config' => [
                     'label' => [
