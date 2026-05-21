@@ -4,7 +4,7 @@
     {% if product.translated.customFields.academy_product_black_friday is not same as(true) %}
         {{ parent() }}
     {% else %}
-        <div class="academy-product-box">
+        <div class="academy-product-box" data-testid="campaign-product-card">
             {{ parent() }}
         </div>
     {% endif %}
