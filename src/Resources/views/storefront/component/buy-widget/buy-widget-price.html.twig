@@ -31,7 +31,7 @@
                                 {{ parent() }}
                             {% else %}
                                 {# Adapted #}
-                                <div class="col-12 p-0 product-detail-list-price-wrapper">
+                                <div class="col-12 p-0 product-detail-list-price-wrapper" data-testid="campaign-product-detail-list-price">
                                     <span class="list-price-percentage fw-bold">-{{ listPrice.percentage|round(0, 'floor') }}%</span>
 
                                     {% if beforeListPriceSnippetExists %}{{ 'listing.beforeListPrice'|trans|trim }}{% endif %}

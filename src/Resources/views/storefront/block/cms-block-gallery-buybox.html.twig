@@ -6,7 +6,9 @@
     {% else %}
         {% set element = block.slots.getSlot('right') %}
 
-        <div class="academy-product-detail-buy col-lg-5 product-detail-buy" data-cms-element-id="{{ element.id }}">
+        <div class="academy-product-detail-buy col-lg-5 product-detail-buy"
+             data-testid="campaign-product-detail-buy"
+             data-cms-element-id="{{ element.id }}">
             {% block block_gallery_buybox_column_right_inner %}
                 {% sw_include '@Storefront/storefront/element/cms-element-' ~ element.type ~ '.html.twig' ignore missing %}
             {% endblock %}

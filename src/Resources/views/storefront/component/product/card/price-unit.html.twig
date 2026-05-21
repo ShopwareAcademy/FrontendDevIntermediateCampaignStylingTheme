@@ -4,7 +4,7 @@
     {% if product.translated.customFields.academy_product_black_friday is not same as(true) %}
         {{ parent() }}
     {% else %}
-        <div class="academy-black-friday-price-wrapper d-inline-flex align-self-stretch flex-wrap">
+        <div class="academy-black-friday-price-wrapper d-inline-flex align-self-stretch flex-wrap" data-testid="campaign-product-price">
             <span class="badge badge-discount rounded-pill ">
                 -{{ price.listPrice.percentage|round(0, 'floor') }}%
             </span>
