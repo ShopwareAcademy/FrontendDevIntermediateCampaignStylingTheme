@@ -29,8 +29,11 @@ bin/console cache:clear
 
 ## License
 
-MIT License – Educational use only (intended as an educational example; the MIT license in `composer.json` applies).
+MIT License.
+
+You may use this plugin in commercial and professional projects.
+It is provided as an educational example and comes without a warranty and without support.
 
 ## Contributing
 
-This plugin is part of the Shopware Academy curriculum. For educational purposes only.
+This plugin is part of the Shopware Academy curriculum.
